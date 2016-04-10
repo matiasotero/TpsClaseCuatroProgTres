@@ -5,7 +5,10 @@
 </head>
 <body>
 <?php
-
+	abstract class Persona
+	{
+		
+	}
 ?>
 </body>
 </html>
