@@ -7,10 +7,10 @@
 <?php
 	abstract class Persona
 	{
-		$_apellido;
-		$_dni;
-		$_nombre;
-		$_sexo;
+		private $_apellido;
+		private $_dni;
+		private $_nombre;
+		private $_sexo;
 
 		function __construct($nombre, $apellido, $dni, $sexo);
 
