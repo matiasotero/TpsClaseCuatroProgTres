@@ -29,7 +29,7 @@
 
 		function ToString()
 		{			
-			return Persona::ToString()."Legajo: ".$this->getLegajo()."<br>"."Sueldo: ".$this->getSueldo()."<br>";			
+			return Persona::ToString()."Legajo: ".$this->getLegajo()."-"."Sueldo: ".$this->getSueldo()."-";			
 		}
 	}
 ?>
