@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Ejercicio Uno</title>
-</head>
-<body>
 <?php
 	abstract class Persona
 	{
@@ -14,30 +8,30 @@
 
 		function __construct($nombre, $apellido, $dni, $sexo)
 		{
-			$_nombre=$nombre;
-			$_apellido=$apellido;
-			$_dni=$dni;
-			$_sexo=$sexo;
+			$this->_nombre=$nombre;
+			$this->_apellido=$apellido;
+			$this->_dni=$dni;
+			$this->_sexo=$sexo;
 		}
 
 		function getApellido()
 		{
-			return $_apellido;
+			return $this->_apellido;
 		}
 
 		function getDni()
 		{
-			return $_dni;
+			return $this->_dni;
 		}
 
 		function getNombre()
 		{
-			return $_nombre;
+			return $this->_nombre;
 		}
 
 		function getSexo()
 		{
-			return $_sexo;
+			return $this->_sexo;
 		}
 
 		function Hablar($idioma)
@@ -47,9 +41,7 @@
 
 		function ToString()
 		{
-			return "Apellido: ".getApellido()."<br>"."Nombre: ".getNombre()."<br>"."Dni: ".getDni()."<br>"."Sexo: ".getSexo()."<br>";
+			return "Apellido: ".$this->getApellido()."<br>"."Nombre: ".$this->getNombre()."<br>"."Dni: ".$this->getDni()."<br>"."Sexo: ".$this->getSexo()."<br>";
 		}
 	}
 ?>
-</body>
-</html>

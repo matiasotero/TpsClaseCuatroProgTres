@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
 <?php
 	include_once "persona.php";
 	class Empleado extends Persona 
@@ -11,21 +5,21 @@
 		protected $_legajo;
 		protected $_sueldo;
 
-		function __contruct($nombre, $apellido, $dni, $sexo,$legajo,$sueldo)
+		function __construct($nombre, $apellido, $dni, $sexo, $legajo, $sueldo)
 		{
-			parent::__construct($nombre, $apellido, $dni, $sexo);
-			$_legajo=$legajo;
-			$_sueldo=$sueldo;
+			Persona::__construct($nombre, $apellido, $dni, $sexo);
+			$this->_legajo=$legajo;
+			$this->_sueldo=$sueldo;
 		}	
 
 		function getLegajo()
 		{
-			return $_legajo;
+			return $this->_legajo;
 		}	
 
 		function getSueldo()
 		{
-			return $_sueldo;
+			return $this->_sueldo;
 		}
 
 		function Hablar($idioma)
@@ -35,9 +29,7 @@
 
 		function ToString()
 		{			
-			return parent::ToString()."Legajo: ".getLegajo()."<br>"."Sueldo: ".getSueldo()."<br>";			
+			return Persona::ToString()."Legajo: ".$this->getLegajo()."<br>"."Sueldo: ".$this->getSueldo()."<br>";			
 		}
 	}
 ?>
-</body>
-</html>
