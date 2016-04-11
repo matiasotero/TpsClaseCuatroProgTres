@@ -1,14 +1,36 @@
 <?php
-	private $_empleados=array();
+	private $_empleados;
 	private $_razonSocial;
 
 	function __construct($razonSocial)
 	{
-		$this->razonSocial=$razonSocial;
+		$this->_razonSocial=$razonSocial;
+		$this->_empleados=array();
 	}
 
-	function AgregarEmpleado()
+	function AgregarEmpleado($empleado)
 	{
-		return false;
+		array_push($this->_empleados, $empleado);
+		return true;
+	}
+
+	function CalcularSueldos()
+	{
+
+	}
+
+	function EliminarEmpleado($persona)
+	{
+
+	}
+
+	private function ElimiarEmpleadosRepetidos()
+	{
+
+	}
+
+	function ToString()
+	{
+
 	}
 ?>
