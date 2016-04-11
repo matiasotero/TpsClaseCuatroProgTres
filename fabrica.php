@@ -1,45 +1,49 @@
 <?php
-	private $_empleados;
-	private $_razonSocial;
-
-	function __construct($razonSocial)
+	class Fabrica
 	{
-		$this->_razonSocial=$razonSocial;
-		$this->_empleados=array();
-	}
+		private $_empleados;
+		private $_razonSocial;
 
-	function AgregarEmpleado($empleado)
-	{
-		array_push($this->_empleados, $empleado);
-		EliminarEmpleadosRepetidos();
-		return true;
-	}
-
-	function CalcularSueldos()
-	{
-		$totalSueldos;
-		foreach ($this->_empleados as $empleado) 
+		function __construct($razonSocial)
 		{
-			$totalSueldos+=$this->_empleados[0];
+			$this->_razonSocial=$razonSocial;
+			$this->_empleados=array();
 		}
-		return $totalSueldos;
-	}
 
-	function EliminarEmpleado($persona)
-	{
-		unset($persona);
-	}
-
-	private function EliminarEmpleadosRepetidos()
-	{
-		array_unique($this->_empleados);
-	}
-
-	function ToString()
-	{
-		foreach ($this->_empleados as $empleado) 
+		function AgregarEmpleado($empleado)
 		{
-			echo $empleado->ToString();
+			array_push($this->_empleados, $empleado);
+			$this->EliminarEmpleadosRepetidos();
+			return true;
 		}
-	}
+
+		function CalcularSueldos()
+		{
+			$totalSueldos;
+			foreach ($this->_empleados as $empleado) 
+			{
+				$totalSueldos+=$this->_empleados[0];
+			}
+			return $totalSueldos;
+		}
+
+		function EliminarEmpleado($persona)
+		{
+			unset($persona);
+		}
+
+		private function EliminarEmpleadosRepetidos()
+		{
+			$this->_empleados = array_unique($this->_empleados[0]);
+		}
+
+		function ToString()
+		{
+			echo "Empresa: ".$this->_razonSocial."<br>"."==================";
+			foreach ($this->_empleados as $empleado) 
+			{
+				echo "<br>".$empleado->ToString()."------------------------------";
+			}
+		}
+}
 ?>
